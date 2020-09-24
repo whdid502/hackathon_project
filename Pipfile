@@ -10,6 +10,7 @@ django = "*"
 pandas = "*"
 django-autocomplete-light = "*"
 django-taggit = "*"
+sklearn = "*"
 
 [requires]
 python_version = "3.8"

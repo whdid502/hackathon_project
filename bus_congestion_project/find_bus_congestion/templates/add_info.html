@@ -7,7 +7,16 @@
     <script type="text/javascript">
         document.getElementById('date').value = new Date().toISOString().substring(0, 10);;
         document.getElementById('time').value = new Date().toISOString().slice(11, 16);
-    </script> 
+    </script>
+    
+    {% load static %}
+    <link href="{% static 'home.css' %}" rel="stylesheet" type="text/css" />
+    <link
+      href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
     <title>추가 정보 입력</title>
 </head>
 
@@ -16,45 +25,72 @@
     <form action="{% url 'result'  %}" method='POST'>
         {% csrf_token %}
         <p>{{terminal}} 정류장의 추가정보 </p>
-        <br/>
-        <br/>
-        <p>날짜 : <input id='date', type='date', name='day' placehorder='날짜' /></p>
-        <br/>
-        <br/>
-        <p>시간 : <input id='time', type='time', name='time' placehorder='시간' /></p>
-        <br/>
-        <br/>
-        <p>날씨</p>
-        <div>
-            <input type="radio" name="weather" value="맑음" checked>
-            <label for="맑음">맑음</label>
+
+        <div class="for_center">
+            <div class="top_container">
+
+            
+                <div class="q_container">
+                 <form action="https//server.ai_school.com" method="POST">
+                    <div class="q">
+                        {% load static %}
+                        <img src="{% static './q_img/day.png' %}" rel="stylesheet" 
+                        type="img" /> 
+                        <p>날짜 : <input id='date', type='date', name='day' placehorder='날짜' /></p>
+                        
+                    </div>
+      
+                    <div class="q">
+                        {% load static %}
+                        <img src="{% static './q_img/term2.png' %}" rel="stylesheet" 
+                        type="img" />
+                        <p>시간 : <input id='time', type='time', name='time' placehorder='시간' /></p>
+                    
+                    </div>
+
+                    <p>날씨</p>
+                    <div>
+                        <input type="radio" name="weather" value="맑음" checked>
+                        <label for="맑음">맑음</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="weather" value="구름 조금">
+                        <label for="구름 조금">구름 조금</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="weather" value="구름 많음">
+                        <label for="구름 많음">구름 많음</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="weather" value="흐림">
+                        <label for="흐림">흐림</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="weather" value="비">
+                        <label for="비">비</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="weather" value="눈">
+                        <label for="눈">눈</label>
+                    </div>
+                    <br/>
+                    <br/>
+                    <button type='submit', value={{terminal}}, name='terminal'> 혼잡도 확인하기 </button>
+                    
+      
+                 </form>
+      
+                </div>
+      
+            </div>
         </div>
-        <div>
-            <input type="radio" name="weather" value="구름 조금">
-            <label for="구름 조금">구름 조금</label>
-        </div>
-        <div>
-            <input type="radio" name="weather" value="구름 많음">
-            <label for="구름 많음">구름 많음</label>
-        </div>
-        <div>
-            <input type="radio" name="weather" value="흐림">
-            <label for="흐림">흐림</label>
-        </div>
-        <div>
-            <input type="radio" name="weather" value="비">
-            <label for="비">비</label>
-        </div>
-        <div>
-            <input type="radio" name="weather" value="눈">
-            <label for="눈">눈</label>
-        </div>
-        <br/>
-        <br/>
-        <button type='submit', value={{terminal}}, name='terminal'> 혼잡도 확인하기 </button>
-      </form>
-</body>
-</html>
+      </body>
+      </html>
+
+
+
+
+
 
 
  
