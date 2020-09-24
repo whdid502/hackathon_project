@@ -30,7 +30,9 @@ def add_info(request):
 def result(request):
     terminal = request.POST['terminal']##역
     day = request.POST['day'] ## 날짜
-    weather = request.POST['weather'] ## 날씨
+    weather = request.POST['weather']
+    weather_dic = {'맑음':0, '구름 조금':1, '구름 많음':2, '흐림':3, '비':4, '눈':5}
+    weather_num = weather_dic[weather] ## 날씨
     year = int(day.split('-')[0])
     month = int(day.split('-')[1])
     days = int(day.split('-')[2])
@@ -38,5 +40,4 @@ def result(request):
     day_of_the_week = datetime.datetime(year, month, days).weekday()
     day_of_the_week_dic = {1:'화요일', 2:'수요일', 3:'목요일', 4:'금요일', 5:'토요일', 6:'일요일', 7:'월요일'}
     week_day = day_of_the_week_dic[day_of_the_week] ## 요일
-    print(weather)
     return render(request, 'result.html', {'terminal':terminal, 'day':day, 'time':time})
