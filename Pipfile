@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 django = "*"
 pandas = "*"
+django-autocomplete-light = "*"
+django-taggit = "*"
 
 [requires]
 python_version = "3.8"

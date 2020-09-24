@@ -20,5 +20,7 @@ from find_bus_congestion import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('add_info/', views.add_info, name='add_info'),
     path('result/', views.result, name='result'),
+    path('show_terminal/', views.show_terminal, name='show_terminal'),
 ]

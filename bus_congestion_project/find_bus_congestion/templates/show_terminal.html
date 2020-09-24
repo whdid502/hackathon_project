@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name='viewport' content='width=device-width, install-scale=1.0' />
+    <meta http-equiv='X-UA_Compatible', content='ie=edge' />
+    <title>역 목록</title>
+</head>
+
+<body>
+    <h1>역을 골라주세요</h1>
+    <form action="{% url 'add_info'  %}" method='POST'>
+    {% csrf_token %}
+        <ul>
+            {% for terminal in pre_terminal_list %}
+                <div>
+                    <input type="radio" id="terminal" name="terminal" value={{terminal}} checked>
+                    <label for={{terminal}}>{{terminal}}</label>
+                </div>
+            {% endfor %}
+        </ul>
+        <button type='submit'> 추가 정보 입력 </button>
+    </form>
+</body>
+</html>
+
+

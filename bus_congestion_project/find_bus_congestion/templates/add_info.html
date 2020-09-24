@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name='viewport' content='width=device-width, install-scale=1.0' />
+    <meta http-equiv='X-UA_Compatible', content='ie=edge' />
+    <script type="text/javascript">
+        document.getElementById('date').value = new Date().toISOString().substring(0, 10);;
+        document.getElementById('time').value = new Date().toISOString().slice(11, 16);
+    </script> 
+    <title>추가 정보 입력</title>
+</head>
+
+<body>
+    <h1>시간과 정류장ars번호를 적어주세요</h1>
+    <form action="{% url 'result'  %}" method='POST'>
+        {% csrf_token %}
+        <p>{{terminal}} 정류장의 추가정보 </p>
+        <br/>
+        <br/>
+        <p>날짜 : <input id='date', type='date', name='day' placehorder='날짜' /></p>
+        <br/>
+        <br/>
+        <p>시간 : <input id='time', type='time', name='time' placehorder='시간' /></p>
+        <br/>
+        <br/>
+        <p>날씨</p>
+        <div>
+            <input type="radio" name="weather" value="맑음" checked>
+            <label for="맑음">맑음</label>
+        </div>
+        <div>
+            <input type="radio" name="weather" value="흐림">
+            <label for="흐림">흐림</label>
+        </div>
+        <div>
+            <input type="radio" name="weather" value="눈,비">
+            <label for="눈,비">눈,비</label>
+        </div>
+        <br/>
+        <br/>
+        <button type='submit', value={{terminal}}, name='terminal'> 혼잡도 확인하기 </button>
+      </form>
+</body>
+</html>
+
+
+ 
