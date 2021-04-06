@@ -1,1 +1,1 @@
-console.log('가나다라마바사')
+console.log('abcde')
