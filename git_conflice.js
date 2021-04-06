@@ -1,2 +1,1 @@
-console.log('솔희솔희')
-console.log('abcde')
+console.log('조양권')
